@@ -72,8 +72,29 @@ a <- 2
 b <- -1
 c <- -4
 
-solution1 <- (-1 *b + sqrt(b^2 - (4*a*c))/2*a
-solution2 <- (-1 *b - sqrt(b^2 - (4*a*c))/2*a
+solution1 <- (-b + sqrt(b^2 - (4*a*c)))/(2*a)
+solution1
+solution2 <- (-b - sqrt(b^2 - (4*a*c)))/(2*a)
+solution2
 
-                    
+?sqrt()
+
+?log()
+
+log(1024, base = 4)
+
+a <-2
+b <- -1
+c <- -1
+
+# solving the quadratic equation
+(-b + sqrt(b^2 - 4*a*c))/(2*a)
+(-b - sqrt(b^2 - 4*a*c))/(2*a)
               
+
+library(dslabs)
+data(movielens)
+
+str(movielens)
+
+nlevels(movielens[["genres"]])

@@ -130,3 +130,6 @@ The function table() takes a vector as input and returns the frequency of each u
 We will use the table function to answer this question.
 
 Use the table function in one line of code to create a table showing the number of states per region.
+
+
+We already know we can use the levels() function to determine the levels of a factor. A different function, nlevels(), may be used to determine the number of levels of a factor.
