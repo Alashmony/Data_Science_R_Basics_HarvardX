@@ -1,0 +1,73 @@
+Book @ https://rafalab.dfci.harvard.edu/dsbook/r-basics.html
+
+1.1 Motivation and getting started:
+Case Study: https://rafalab.dfci.harvard.edu/dsbook/r-basics.html#case-study-us-gun-murders
+Install R (CRAN): 
+    - Go: https://cran.r-project.org/
+    - Choose OS
+    - Choose the base distribution
+    - Install
+Install RStudio:
+    - Go to: https://www.rstudio.com/products/rstudio/download/
+    - Download the installer
+    - Install R
+Get the key binding Cheat sheet from RStudio:
+    - Help
+    - Cheat Sheets
+    - RStudio IDE Cheat sheet
+
+To install a package:
+    - ```install.packages("pack1","pack2")``` OR
+    - From RStudio:
+        - Tools --> Install Packages --> Enter package names (use auto complete to write faster) sepated with a comma ","
+    
+- To check the installed packages use:
+    - ```installed.packages()```    
+
+- To use an installed package
+    - ```library(pack_name)```
+
+RStudio has many useful features as an R editor, including the ability to test code easily as we write scripts and several autocomplete features.
+Keyboard shortcuts:
+    Save a script: Ctrl+S on Windows and Command+S on Mac
+    Run an entire script:  Ctrl+Shift+Enter on Windows Command+Shift+Return on Mac, or click "Source" on the editor pane
+    Run a single line of script: Ctrl+Enter on Windows and Command+Return on Mac while the cursor is pointing to that line, or select the chunk and click "run"
+    Open a new script: Ctrl+Shift+N on Windows and Command+Shift+N on Mac
+
+1.2 R basics
+Assigning variables:
+    - Use "<-" to assign a value to a variable, for example:
+        ```a <- 1```
+        assigns the value 1 to the variable a
+    - You can also assign with the equal sign "="
+        ```b = 2```
+        Assigns the value 2 to the variable b
+Printing:
+    - Just like python, use the print() function to print the value
+        ```print(a)```
+        prints the value for the variable a
+Getting vaiables stored in the workspace (session)
+    - use ls() to get all variables stored in the workspace
+    - RStudio has a tab called "Environement" that shows also the vaiables stored
+Functions:
+    - Some pre-defined functions was shown previously like ls(), install.packages(), and sqrt() for calculating the square root
+    - You can get the function script by writting its name without prancits, for example ```ls``` only
+    - To get the documentation for a function, use ```help("function_name")``` or ```?function_name```
+    - To find out which args are mandatory, you will find them without a default value in the docs
+    - to know what are the arguments for any funciton, use ```args(function_name)``` and you will notics also the args with default value
+    - Assigning arguments with the equal sign "=" NOT the assignment sign "<-"
+    - The arthematic operators as an exception, does not need the prackets by default, for example:
+        ```1+2```
+        ```5^3```
+    - To get help for arthematic operators, use the help() function with any arthematic operator or the question mark "?", for example:
+        ```help("+")```
+        ```?"^"```
+Datasets:
+    - Some pre-built Datasets are available in R by default
+    - To find them out, use the ```data()``` function
+    - To call a dataset, just run its name, for example: ```Co2```
+Variable naming:
+    - variable names must start with a letter and must not contain spaces
+    - avoid naming variables with the names of pre-defined functions in R
+
+1.3 Data Types:

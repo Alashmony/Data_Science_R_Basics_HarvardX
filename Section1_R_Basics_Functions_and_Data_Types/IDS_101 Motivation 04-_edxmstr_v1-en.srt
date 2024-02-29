@@ -1,0 +1,196 @@
+0
+00:00:00,000 --> 00:00:02,862
+
+
+1
+00:00:02,862 --> 00:00:07,155
+[MUSIC PLAYING]
+
+2
+00:00:07,155 --> 00:00:08,586
+
+
+3
+00:00:08,586 --> 00:00:11,850
+RAFAEL IRIZARRY: In this series, we'll be using the R software
+
+4
+00:00:11,850 --> 00:00:14,550
+environment for all our analyses.
+
+5
+00:00:14,550 --> 00:00:18,330
+Throughout our data science series, you will learn R and data analysis
+
+6
+00:00:18,330 --> 00:00:20,310
+techniques simultaneously.
+
+7
+00:00:20,310 --> 00:00:23,290
+Your R skills will improve throughout the series.
+
+8
+00:00:23,290 --> 00:00:27,270
+So in this course, rather than cover every R skill you need,
+
+9
+00:00:27,270 --> 00:00:30,360
+we provide the building blocks so you can grow your knowledge as you
+
+10
+00:00:30,360 --> 00:00:32,189
+go through the series.
+
+11
+00:00:32,189 --> 00:00:35,220
+We find that we better retain our knowledge when we
+
+12
+00:00:35,220 --> 00:00:37,620
+learn it to solve a specific problem.
+
+13
+00:00:37,620 --> 00:00:41,080
+As in throughout the series, in this course,
+
+14
+00:00:41,080 --> 00:00:43,230
+we'll use a motivating case study.
+
+15
+00:00:43,230 --> 00:00:46,900
+In this case, it's related to crime in the United States.
+
+16
+00:00:46,900 --> 00:00:49,650
+A relevant data set and some basic R skills
+
+17
+00:00:49,650 --> 00:00:53,680
+will permit us to answer specific questions related to the topic.
+
+18
+00:00:53,680 --> 00:00:57,840
+Imagine you live in Europe, and you're offered a job in a US company
+
+19
+00:00:57,840 --> 00:01:00,750
+with many locations across all states.
+
+20
+00:01:00,750 --> 00:01:06,120
+It is a great job, but news with headlines such as "US Gun Homicide Rate
+
+21
+00:01:06,120 --> 00:01:09,980
+Higher Than Other Developed Countries" have you worried.
+
+22
+00:01:09,980 --> 00:01:14,400
+Charts like this one, where we can see the US having a much higher homicide
+
+23
+00:01:14,400 --> 00:01:18,750
+rate than other rich countries, worries you.
+
+24
+00:01:18,750 --> 00:01:20,880
+You're about to decline the job, but then you
+
+25
+00:01:20,880 --> 00:01:25,350
+wonder if perhaps these news reports are a bit sensationalist.
+
+26
+00:01:25,350 --> 00:01:28,530
+You note, for example, that other European countries,
+
+27
+00:01:28,530 --> 00:01:33,000
+such as the Lithuania, Ukraine, and Russia, are not in this chart,
+
+28
+00:01:33,000 --> 00:01:37,680
+and they have higher rates than the US, higher than 4 per 100,000.
+
+29
+00:01:37,680 --> 00:01:42,390
+You're also reminded that the US is a large and diverse country with 50
+
+30
+00:01:42,390 --> 00:01:46,260
+very different states and the District of Columbia.
+
+31
+00:01:46,260 --> 00:01:50,700
+California, for example, has a larger population than Canada.
+
+32
+00:01:50,700 --> 00:01:55,650
+20 US states have populations larger than that of Norway.
+
+33
+00:01:55,650 --> 00:01:59,720
+In some respects, the variability across states in the US
+
+34
+00:01:59,720 --> 00:02:03,630
+may be akin to the variability across countries in Europe.
+
+35
+00:02:03,630 --> 00:02:05,280
+So back to your job.
+
+36
+00:02:05,280 --> 00:02:07,520
+You have options of where to live, and want
+
+37
+00:02:07,520 --> 00:02:10,800
+to find out how safe each state is.
+
+38
+00:02:10,800 --> 00:02:14,580
+We will do this using R. We will examine data
+
+39
+00:02:14,580 --> 00:02:17,520
+related to gun homicides in the US.
+
+40
+00:02:17,520 --> 00:02:21,930
+However, in the first few videos, we go over some logistics
+
+41
+00:02:21,930 --> 00:02:27,610
+and introduce general concepts that are the building blocks of what comes next.
+
+42
+00:02:27,610 --> 00:02:31,320
+It will not be immediately obvious how all these concepts are useful,
+
+43
+00:02:31,320 --> 00:02:36,450
+but later in the course, and later in this series, it will become clear.
+
+44
+00:02:36,450 --> 00:02:40,950
+After we're done with the basics, we'll have our first real data science
+
+45
+00:02:40,950 --> 00:02:41,820
+experience.
+
+46
+00:02:41,820 --> 00:02:46,710
+We will delve into the homicide data, and answer practical, real world
+
+47
+00:02:46,710 --> 00:02:48,560
+questions.
+
+48
+00:02:48,560 --> 00:02:54,187
+
+

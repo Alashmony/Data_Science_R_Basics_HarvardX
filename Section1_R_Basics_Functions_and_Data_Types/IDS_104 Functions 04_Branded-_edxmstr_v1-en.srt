@@ -1,0 +1,684 @@
+0
+00:00:00,000 --> 00:00:02,910
+
+
+1
+00:00:02,910 --> 00:00:06,305
+[MUSIC PLAYING]
+
+2
+00:00:06,305 --> 00:00:09,220
+
+
+3
+00:00:09,220 --> 00:00:12,310
+SPEAKER 1: Once you define variables, a data analysis process
+
+4
+00:00:12,310 --> 00:00:16,870
+can usually be described as a series of functions applied to the data.
+
+5
+00:00:16,870 --> 00:00:19,750
+R includes several predefined functions.
+
+6
+00:00:19,750 --> 00:00:23,770
+We've already shown the install.packages, library, and ls functions.
+
+7
+00:00:23,770 --> 00:00:28,000
+We've also shown you the sqrt function which computes the square root.
+
+8
+00:00:28,000 --> 00:00:31,180
+We use that to solve the quadratic equation.
+
+9
+00:00:31,180 --> 00:00:33,910
+Now there are many more functions, and even more
+
+10
+00:00:33,910 --> 00:00:36,100
+can be added through packages.
+
+11
+00:00:36,100 --> 00:00:40,090
+Here we review some important information related to functions,
+
+12
+00:00:40,090 --> 00:00:42,250
+and we show you how to learn about functions
+
+13
+00:00:42,250 --> 00:00:45,020
+and tell you a little bit about what's available.
+
+14
+00:00:45,020 --> 00:00:47,710
+Note that these functions do not appear in the workspace,
+
+15
+00:00:47,710 --> 00:00:49,900
+but they are available for use.
+
+16
+00:00:49,900 --> 00:00:55,000
+In general, to evaluate a function, we need to use parentheses.
+
+17
+00:00:55,000 --> 00:00:58,210
+Note, for example, that if you don't, let's say we type
+
+18
+00:00:58,210 --> 00:01:02,620
+the function ls without using parentheses, what it does
+
+19
+00:01:02,620 --> 00:01:04,540
+is it shows us the code for ls.
+
+20
+00:01:04,540 --> 00:01:06,820
+It doesn't evaluate the function.
+
+21
+00:01:06,820 --> 00:01:11,320
+Here you can see the code if you just type ls into your console.
+
+22
+00:01:11,320 --> 00:01:16,000
+Now if I add the parentheses, if I type ls, open parentheses,
+
+23
+00:01:16,000 --> 00:01:19,570
+closed parentheses, now the function is evaluated
+
+24
+00:01:19,570 --> 00:01:22,360
+and you see the objects in the workspace.
+
+25
+00:01:22,360 --> 00:01:25,750
+Unlike ls, which doesn't require any arguments,
+
+26
+00:01:25,750 --> 00:01:28,540
+most functions require at least one.
+
+27
+00:01:28,540 --> 00:01:33,530
+Here's an example of how we assign an object to the argument for the function
+
+28
+00:01:33,530 --> 00:01:37,880
+log, a very simple mathematical function that computes the natural log.
+
+29
+00:01:37,880 --> 00:01:42,910
+So if I type log of 8, that's the argument, 8 is the argument,
+
+30
+00:01:42,910 --> 00:01:47,980
+I get in return the log of 8, 2.079442.
+
+31
+00:01:47,980 --> 00:01:51,100
+Now remember, a is an object that we've defined before.
+
+32
+00:01:51,100 --> 00:01:52,720
+We defined this in a previous video.
+
+33
+00:01:52,720 --> 00:01:54,610
+Let's define it as 1.
+
+34
+00:01:54,610 --> 00:01:58,810
+So we can apply a function to a variable as well instead of a number
+
+35
+00:01:58,810 --> 00:01:59,530
+like we just did.
+
+36
+00:01:59,530 --> 00:02:01,780
+We can type log of a.
+
+37
+00:02:01,780 --> 00:02:06,100
+Because a has been defined as 1, then the log of a here is 0.
+
+38
+00:02:06,100 --> 00:02:10,270
+In R, functions can be what we call nested.
+
+39
+00:02:10,270 --> 00:02:14,230
+What we mean by nested is that you can call a function
+
+40
+00:02:14,230 --> 00:02:18,090
+to get the argument that's going to be used by another function.
+
+41
+00:02:18,090 --> 00:02:19,540
+Let's give you an example of this.
+
+42
+00:02:19,540 --> 00:02:23,860
+If we type the function exp, exp, it stands for exponential,
+
+43
+00:02:23,860 --> 00:02:28,270
+we get e, the mathematical constant e to the 1.
+
+44
+00:02:28,270 --> 00:02:32,260
+2.718282 dot, dot, dot.
+
+45
+00:02:32,260 --> 00:02:35,440
+If we compute the log of that number, we should get back 1.
+
+46
+00:02:35,440 --> 00:02:37,090
+These are inverse functions.
+
+47
+00:02:37,090 --> 00:02:41,290
+So note that if we type log, the function log, and then
+
+48
+00:02:41,290 --> 00:02:46,180
+inside that function we use the argument function exp,
+
+49
+00:02:46,180 --> 00:02:49,510
+again, parentheses, and put a 1, we first
+
+50
+00:02:49,510 --> 00:02:54,430
+evaluate the first function, exp(1), and then we evaluate the second,
+
+51
+00:02:54,430 --> 00:02:55,810
+and we get the answer of 1.
+
+52
+00:02:55,810 --> 00:02:58,580
+Again, because these are inverse functions.
+
+53
+00:02:58,580 --> 00:03:02,170
+So the important thing to remember is that functions are evaluated
+
+54
+00:03:02,170 --> 00:03:05,350
+from the inside out when you nest them.
+
+55
+00:03:05,350 --> 00:03:08,920
+Another very important thing to know about functions.
+
+56
+00:03:08,920 --> 00:03:12,530
+You can learn about them by using the help system.
+
+57
+00:03:12,530 --> 00:03:15,880
+A very nice feature of R is that it documents its functions
+
+58
+00:03:15,880 --> 00:03:18,100
+and that we can call help files and see--
+
+59
+00:03:18,100 --> 00:03:20,230
+get much information about them.
+
+60
+00:03:20,230 --> 00:03:24,310
+Help files are like user manuals for the functions.
+
+61
+00:03:24,310 --> 00:03:27,100
+You can find out what the function expects
+
+62
+00:03:27,100 --> 00:03:31,450
+and what it does by reviewing the very useful manuals included in R.
+
+63
+00:03:31,450 --> 00:03:34,390
+You get help by using the help function like this.
+
+64
+00:03:34,390 --> 00:03:37,660
+Help, open parentheses, and then the function name in quotes.
+
+65
+00:03:37,660 --> 00:03:41,650
+For example, here's the help for log.
+
+66
+00:03:41,650 --> 00:03:46,420
+For most functions, you can use as a shorthand, which is the question
+
+67
+00:03:46,420 --> 00:03:48,460
+mark followed by the function name.
+
+68
+00:03:48,460 --> 00:03:50,350
+And that will show you the same help file.
+
+69
+00:03:50,350 --> 00:03:54,360
+The help file will show you what the function is expecting.
+
+70
+00:03:54,360 --> 00:03:55,360
+These are the arguments.
+
+71
+00:03:55,360 --> 00:03:56,470
+We call these the arguments.
+
+72
+00:03:56,470 --> 00:03:59,650
+For example, log expects an x, a value.
+
+73
+00:03:59,650 --> 00:04:01,120
+And it also expects base.
+
+74
+00:04:01,120 --> 00:04:03,850
+You can see that from looking at the help file for log.
+
+75
+00:04:03,850 --> 00:04:08,350
+However, some arguments are required, and others are optional.
+
+76
+00:04:08,350 --> 00:04:13,180
+You can determine which arguments are optional by noting in the help document
+
+77
+00:04:13,180 --> 00:04:17,110
+that a default value is assigned with the equal sign.
+
+78
+00:04:17,110 --> 00:04:22,990
+For example, the base of the function log defaults to the base of x to the 1.
+
+79
+00:04:22,990 --> 00:04:24,970
+It's the natural log.
+
+80
+00:04:24,970 --> 00:04:27,880
+If you already know how the function works
+
+81
+00:04:27,880 --> 00:04:29,860
+but need a quick reminder of the arguments,
+
+82
+00:04:29,860 --> 00:04:31,600
+you can use the args function.
+
+83
+00:04:31,600 --> 00:04:36,700
+If I type args of log, it shows us the two arguments that it needs.
+
+84
+00:04:36,700 --> 00:04:40,280
+You can change the default value by simply assigning another value.
+
+85
+00:04:40,280 --> 00:04:44,010
+For example, if instead of natural log we want to get log base 2,
+
+86
+00:04:44,010 --> 00:04:49,120
+we would type, for example, log of 8, and now we change the default of base
+
+87
+00:04:49,120 --> 00:04:49,990
+to 2.
+
+88
+00:04:49,990 --> 00:04:51,760
+I get the answer 3.
+
+89
+00:04:51,760 --> 00:04:55,270
+Note that to specify arguments, we use the equal sign.
+
+90
+00:04:55,270 --> 00:04:57,820
+We did not use the assignment argument.
+
+91
+00:04:57,820 --> 00:05:02,590
+If we read the help file for log, we see that the first argument
+
+92
+00:05:02,590 --> 00:05:03,550
+has a name, too.
+
+93
+00:05:03,550 --> 00:05:05,350
+It's x.
+
+94
+00:05:05,350 --> 00:05:08,990
+However, we haven't been using that argument name.
+
+95
+00:05:08,990 --> 00:05:09,957
+We could, though.
+
+96
+00:05:09,957 --> 00:05:11,040
+Here's how we would do it.
+
+97
+00:05:11,040 --> 00:05:14,240
+We would type log x equals 8, and then base equals 2.
+
+98
+00:05:14,240 --> 00:05:18,350
+We get the same answer as if we hadn't used the name x.
+
+99
+00:05:18,350 --> 00:05:22,430
+The above code works, but we can save ourselves some time,
+
+100
+00:05:22,430 --> 00:05:26,270
+because if no argument name is used, R assumes
+
+101
+00:05:26,270 --> 00:05:31,130
+you're entering arguments in the order shown in the help file or by args.
+
+102
+00:05:31,130 --> 00:05:36,830
+So by not using the names, R assumes that the arguments are x,
+
+103
+00:05:36,830 --> 00:05:39,050
+and then the next one is base.
+
+104
+00:05:39,050 --> 00:05:42,650
+We said that functions need parentheses to be evaluated,
+
+105
+00:05:42,650 --> 00:05:44,510
+but there are some exceptions.
+
+106
+00:05:44,510 --> 00:05:48,320
+Among these, the most commonly used are the arithmetic
+
+107
+00:05:48,320 --> 00:05:49,850
+and relational operators.
+
+108
+00:05:49,850 --> 00:05:55,730
+For example, 2 to the 3, that function that takes 2 to the power of 3
+
+109
+00:05:55,730 --> 00:05:57,110
+doesn't need a parentheses.
+
+110
+00:05:57,110 --> 00:06:01,550
+We just write it out as we would do in a mathematical formula.
+
+111
+00:06:01,550 --> 00:06:04,910
+You can see the arithmetic operators by looking at the help file.
+
+112
+00:06:04,910 --> 00:06:08,150
+For, for example, the plus operator.
+
+113
+00:06:08,150 --> 00:06:11,180
+So we would type help, and then in quotes, plus.
+
+114
+00:06:11,180 --> 00:06:14,810
+That will show us all the mathematical operators.
+
+115
+00:06:14,810 --> 00:06:17,010
+We can also get help with a question mark,
+
+116
+00:06:17,010 --> 00:06:21,080
+but we need to include quotes for these particular operators.
+
+117
+00:06:21,080 --> 00:06:25,260
+Functions are not the only pre-built objects in R.
+
+118
+00:06:25,260 --> 00:06:29,150
+There are also data sets that are included for users to practice
+
+119
+00:06:29,150 --> 00:06:30,950
+and test out functions.
+
+120
+00:06:30,950 --> 00:06:33,290
+You can see all the available data sets by typing
+
+121
+00:06:33,290 --> 00:06:36,170
+data, parentheses, parentheses.
+
+122
+00:06:36,170 --> 00:06:39,660
+This shows you the object name for these data sets.
+
+123
+00:06:39,660 --> 00:06:43,320
+And these data sets are objects that you can use by simply typing the name.
+
+124
+00:06:43,320 --> 00:06:47,810
+For example, if you type CO2, one of the pre-built data objects,
+
+125
+00:06:47,810 --> 00:06:52,220
+you will see CO2 measurements from a particular measurement station.
+
+126
+00:06:52,220 --> 00:06:55,790
+There are also other mathematical objects that are also pre-built,
+
+127
+00:06:55,790 --> 00:06:59,000
+such as the constant for pi and the infinity number.
+
+128
+00:06:59,000 --> 00:07:02,390
+You can see them by typing pi or typing Inf.
+
+129
+00:07:02,390 --> 00:07:04,550
+Now when we are writing code, you want to think
+
+130
+00:07:04,550 --> 00:07:06,890
+about the names you use for your variables.
+
+131
+00:07:06,890 --> 00:07:08,440
+You want your code to be readable.
+
+132
+00:07:08,440 --> 00:07:14,210
+In the examples we've used up to now, we have used very simple variable names.
+
+133
+00:07:14,210 --> 00:07:16,730
+We have used the letters a, b, and c.
+
+134
+00:07:16,730 --> 00:07:20,060
+But variables names can be almost anything.
+
+135
+00:07:20,060 --> 00:07:23,550
+You want to choose variable names that make your code readable.
+
+136
+00:07:23,550 --> 00:07:27,140
+You want to choose variable names that will later be clear to you
+
+137
+00:07:27,140 --> 00:07:30,300
+what you meant to do in your code.
+
+138
+00:07:30,300 --> 00:07:34,400
+Now there are some rules in R. Some basic rules are
+
+139
+00:07:34,400 --> 00:07:39,290
+that they have to start with a letter, and they can't contain spaces.
+
+140
+00:07:39,290 --> 00:07:43,250
+You also want to avoid using variable names of objects
+
+141
+00:07:43,250 --> 00:07:47,190
+that are already defined in R, because that will cause a lot of confusion.
+
+142
+00:07:47,190 --> 00:07:51,530
+For example, don't define a variable and call it install.packages,
+
+143
+00:07:51,530 --> 00:07:53,570
+because that's already a function in R.
+
+144
+00:07:53,570 --> 00:07:57,110
+A nice convention to follow is to use meaningful words
+
+145
+00:07:57,110 --> 00:08:03,830
+that describe what is stored, stick to lowercase, and instead of spaces, use
+
+146
+00:08:03,830 --> 00:08:04,850
+underscores.
+
+147
+00:08:04,850 --> 00:08:08,270
+So for example, for the two solutions in the quadratic formula,
+
+148
+00:08:08,270 --> 00:08:13,520
+we can use the name solution_1 and solution_2.
+
+149
+00:08:13,520 --> 00:08:17,720
+When we write our code, we're going to be writing them into scripts.
+
+150
+00:08:17,720 --> 00:08:21,200
+So for example, if we wanted to solve another quadratic equation,
+
+151
+00:08:21,200 --> 00:08:27,200
+3x squared plus 2x minus 1, we could just simply redefine a, b, and c,
+
+152
+00:08:27,200 --> 00:08:29,660
+and use the same code that we wrote before.
+
+153
+00:08:29,660 --> 00:08:32,480
+So we would change the existing script, which
+
+154
+00:08:32,480 --> 00:08:37,789
+had a, b, and c as 1, 1, and minus 1, and just change those three numbers.
+
+155
+00:08:37,789 --> 00:08:40,789
+If we save the script, we wouldn't have to rewrite everything.
+
+156
+00:08:40,789 --> 00:08:43,309
+We simply change those three numbers.
+
+157
+00:08:43,309 --> 00:08:47,480
+By creating and saving a script, like the code above,
+
+158
+00:08:47,480 --> 00:08:52,040
+we would not need to retype everything, and again, simply change the variables.
+
+159
+00:08:52,040 --> 00:08:54,890
+So try writing a script into your editor and see
+
+160
+00:08:54,890 --> 00:09:00,890
+how much easier it is to execute code when you've already saved a script.
+
+161
+00:09:00,890 --> 00:09:04,280
+Finally, another way you can make your code more readable
+
+162
+00:09:04,280 --> 00:09:06,470
+is by including comments.
+
+163
+00:09:06,470 --> 00:09:12,470
+If a line of R code starts with a hashtag, with the number symbol,
+
+164
+00:09:12,470 --> 00:09:14,630
+it is not evaluated.
+
+165
+00:09:14,630 --> 00:09:18,830
+We can use this to write reminders of why we wrote the code we wrote.
+
+166
+00:09:18,830 --> 00:09:22,460
+For example, in the script that we just wrote for the quadratic equation,
+
+167
+00:09:22,460 --> 00:09:26,000
+we can include simple comments like these.
+
+168
+00:09:26,000 --> 00:09:28,310
+When we read it in the future, we'll be reminded
+
+169
+00:09:28,310 --> 00:09:32,410
+of why we wrote these particular lines of code.
+
+170
+00:09:32,410 --> 00:09:38,432
+
+

@@ -1,0 +1,220 @@
+0
+00:00:00,000 --> 00:00:03,122
+
+
+1
+00:00:03,122 --> 00:00:06,456
+[MUSIC PLAYING]
+
+2
+00:00:06,456 --> 00:00:09,280
+
+
+3
+00:00:09,280 --> 00:00:12,600
+RAFAEL IRIZARRY: Before we get started with a motivating data set,
+
+4
+00:00:12,600 --> 00:00:18,240
+we need to cover the very basics of R. I'm going to start with objects.
+
+5
+00:00:18,240 --> 00:00:21,400
+And I'm going to use a very simple example here.
+
+6
+00:00:21,400 --> 00:00:23,790
+Suppose a high school student asks us for help
+
+7
+00:00:23,790 --> 00:00:28,180
+solving several quadratic equations of the form a x-squared
+
+8
+00:00:28,180 --> 00:00:30,750
+plus b x plus c equals 0.
+
+9
+00:00:30,750 --> 00:00:36,430
+We know the quadratic equation gives us a solution, shown here.
+
+10
+00:00:36,430 --> 00:00:40,710
+One advantage of programming language is that we can define variables and keep
+
+11
+00:00:40,710 --> 00:00:42,780
+such expressions general.
+
+12
+00:00:42,780 --> 00:00:48,300
+So, if we are asked to solve x squared plus x minus 1 equals 0,
+
+13
+00:00:48,300 --> 00:00:50,820
+and we're going to use the quadratic equation,
+
+14
+00:00:50,820 --> 00:00:56,270
+we can define a to be 1, b to be 1, and c to be minus 1.
+
+15
+00:00:56,270 --> 00:01:01,050
+In R, we do that using the assignment symbol, which
+
+16
+00:01:01,050 --> 00:01:03,990
+is a less than followed by a minus.
+
+17
+00:01:03,990 --> 00:01:05,760
+Note that it looks like a little arrow.
+
+18
+00:01:05,760 --> 00:01:08,720
+You're assigning 1 to a, you're assigning 1 to b,
+
+19
+00:01:08,720 --> 00:01:11,070
+you're assigning minus 1 to c.
+
+20
+00:01:11,070 --> 00:01:14,910
+Note that we can also use the equals sign for assignment,
+
+21
+00:01:14,910 --> 00:01:18,990
+but we recommend against it, because using it can cause confusion.
+
+22
+00:01:18,990 --> 00:01:20,290
+Try this out in your console.
+
+23
+00:01:20,290 --> 00:01:23,400
+Try to define a, b, and c in your console.
+
+24
+00:01:23,400 --> 00:01:28,080
+Note that R does not print anything out when you make these assignments.
+
+25
+00:01:28,080 --> 00:01:29,010
+This is good.
+
+26
+00:01:29,010 --> 00:01:33,330
+Had you made a mistake, you would have received an error message.
+
+27
+00:01:33,330 --> 00:01:37,185
+To see the value stored in a variable we simply type it like this.
+
+28
+00:01:37,185 --> 00:01:39,210
+We type a in the console.
+
+29
+00:01:39,210 --> 00:01:44,280
+And when we hit Return, R shows us the value stored in a, which is 1.
+
+30
+00:01:44,280 --> 00:01:49,080
+A more explicit way to ask R to show us the value that's saved in a variable
+
+31
+00:01:49,080 --> 00:01:50,830
+is to use a print function like this.
+
+32
+00:01:50,830 --> 00:01:54,300
+So we write print parentheses, and inside the parentheses,
+
+33
+00:01:54,300 --> 00:01:55,950
+the object name a.
+
+34
+00:01:55,950 --> 00:01:58,890
+We use the term object to describe stuff that
+
+35
+00:01:58,890 --> 00:02:04,110
+is stored in R. Variables are examples, but objects can also
+
+36
+00:02:04,110 --> 00:02:08,580
+be more complicated entities such as functions, which are described later.
+
+37
+00:02:08,580 --> 00:02:11,910
+As we define objects in the console, we are actually
+
+38
+00:02:11,910 --> 00:02:15,090
+changing what is called the workspace.
+
+39
+00:02:15,090 --> 00:02:20,800
+You can see all the variables saved in your workspace by typing ls().
+
+40
+00:02:20,800 --> 00:02:25,460
+This is a function that shows you the names of the objects saved
+
+41
+00:02:25,460 --> 00:02:26,730
+in your workspace.
+
+42
+00:02:26,730 --> 00:02:30,780
+If you type it here, you will see as an answer, a, b, and c,
+
+43
+00:02:30,780 --> 00:02:33,150
+the three objects we have defined.
+
+44
+00:02:33,150 --> 00:02:37,600
+IDEs usually have a tab that if you click on it,
+
+45
+00:02:37,600 --> 00:02:40,530
+it actually shows you all these variable names.
+
+46
+00:02:40,530 --> 00:02:44,280
+Now, if you try to recover the value of a variable that
+
+47
+00:02:44,280 --> 00:02:46,890
+is not in your workspace, you'll receive an error.
+
+48
+00:02:46,890 --> 00:02:50,480
+For example, if you type x, which we haven't defined,
+
+49
+00:02:50,480 --> 00:02:55,110
+you will receive an error message that says, "Error: object 'x' not found."
+
+50
+00:02:55,110 --> 00:02:58,770
+Now, since these values are saved in variables,
+
+51
+00:02:58,770 --> 00:03:02,550
+to obtain a solution to our equation, we use the quadratic formula.
+
+52
+00:03:02,550 --> 00:03:08,250
+We type it out in R. We do that, we get 0.61 for the first solution,
+
+53
+00:03:08,250 --> 00:03:12,050
+and negative 1.61 for the second one.
+
+54
+00:03:12,050 --> 00:03:18,614
+
+
