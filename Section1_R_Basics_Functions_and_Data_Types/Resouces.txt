@@ -1,0 +1,72 @@
+Course Book:
+https://rafalab.dfci.harvard.edu/dsbook/
+
+###############################
+New books:
+https://rafalab.dfci.harvard.edu/dsbook-part-1/
+https://rafalab.dfci.harvard.edu/dsbook-part-2/
+
+###############################
+Install R distribution:
+https://cran.r-project.org/
+https://posit.co/download/rstudio-desktop/
+
+###############################
+install course specific package (dslabs)
+# installing the dslabs package
+install.packages("dslabs")
+# loading the dslabs package into the R session
+library(dslabs)
+
+
+###############################
+Some additional notes
+In RStudio, you can upload additional functions and datasets in addition to the base R functions and datasets that come with R automatically. A common way to do this is by installing packages, which often contain extra functions and datasets. For this course, there are a few packages you will need to install. You only need to install each individual package once, but after you install a package, there are other steps you have to do whenever you want to use something from that package.
+
+To install a package, you use the code install.packages("package_name", dependencies = TRUE).
+
+To load a package, you use the code library(package_name).
+
+If you also want to use a dataset from a package you have loaded, then you use the code data(dataset_name). To see the dataset, you can take the additional step of View(dataset_name).
+
+
+###############################
+#Installing packages
+install.packages("dslabs")  # to install a single package
+install.packages(c("tidyverse", "dslabs")) # to install two packages at the same time
+installed.packages() # to see the list of all installed packages
+#
+###############################
+#Practice: Adding Packages to R
+We're going to do a quick walkthrough of how to add packages and data to R. First, we're going to see what happens if we forget to install the package first. Let's say we want to use the movielens dataset. First, open Rstudio, and try to open the movielens dataset with the following code:
+
+data(movielens)
+We should get the following warning explaining that the dataset movielens was not found.
+
+"Warning message: In data(movielens) : data set ‘movielens’ not found"
+This is because movielens is part of the dslabs package, which we haven't yet installed. So let's install dslabs with the following code:
+
+install.packages("dslabs")
+However, if we try to pull the movielens data again, it still says that the dataset isn't found. That's because although we've installed dslabs, we haven't loaded it. Next, let's load it with library() using the following code:
+
+library(dslabs)
+Now, when we try to access the movielens dataset, we will be successful.
+
+
+###############################
+Key Points
+To define a variable, we may use the assignment symbol, <-.
+There are two ways to see the value stored in a variable: (1) type the variable name into the console and hit Return, or (2) use the print() function by typing print(variable_name) and hitting Return.
+Objects are things that are stored in named containers in R.  They can be variables, functions, etc.
+The ls() function shows the names of the objects saved in your workspace.
+
+
+###############################
+
+Key points
+In general, to evaluate a function we need to use parentheses. If we type a function without parenthesis, R shows us the code for the function. Most functions also require an argument, that is, something to be written inside the parenthesis.
+To access help files, we may use the help function, help(function_name), or write the question mark followed by the function name, ?function_name.
+The help file shows you the arguments the function is expecting, some of which are required and some are optional. If an argument is optional, a default value is assigned with the equal sign. The args() function also shows the arguments a function needs.
+To specify arguments, we use the equals sign. If no argument name is used, R assumes you’re entering arguments in the order shown in the help file.
+Creating and saving a script makes code much easier to execute.
+To make your code more readable, use intuitive variable names and include comments (using the “#” symbol) to remind yourself why you wrote a particular line of code.
