@@ -1,0 +1,588 @@
+0
+00:00:00,000 --> 00:00:02,892
+
+
+1
+00:00:02,892 --> 00:00:06,266
+[MUSIC PLAYING]
+
+2
+00:00:06,266 --> 00:00:09,170
+
+
+3
+00:00:09,170 --> 00:00:12,390
+RAFAEL IRIZARRY: Variables in R can be of different types.
+
+4
+00:00:12,390 --> 00:00:15,260
+For example, we need to distinguish numbers
+
+5
+00:00:15,260 --> 00:00:20,510
+from character strings and tables from simple lists of numbers.
+
+6
+00:00:20,510 --> 00:00:25,050
+The function "class" helps us determine the type of an object.
+
+7
+00:00:25,050 --> 00:00:28,910
+For example, if I define a as 2 and I look at its class,
+
+8
+00:00:28,910 --> 00:00:30,890
+I will see it's a numeric.
+
+9
+00:00:30,890 --> 00:00:31,850
+Here's another example.
+
+10
+00:00:31,850 --> 00:00:34,070
+Let's look at the class of the function ls.
+
+11
+00:00:34,070 --> 00:00:36,990
+Not surprisingly, we see that it's a function.
+
+12
+00:00:36,990 --> 00:00:41,910
+Up to now, the variables we have defined have been just one number.
+
+13
+00:00:41,910 --> 00:00:44,840
+This is not very useful for storing data.
+
+14
+00:00:44,840 --> 00:00:50,060
+The most common way of storing data sets in R is with data frames.
+
+15
+00:00:50,060 --> 00:00:54,320
+Conceptually, we can think of data frames as tables.
+
+16
+00:00:54,320 --> 00:00:57,950
+Rows represent observations, and different variables
+
+17
+00:00:57,950 --> 00:00:59,870
+are represented by different columns.
+
+18
+00:00:59,870 --> 00:01:02,420
+We're going to see an example soon.
+
+19
+00:01:02,420 --> 00:01:05,104
+Data frames are particularly useful for data
+
+20
+00:01:05,104 --> 00:01:10,580
+sets because we can combine different types into one single object.
+
+21
+00:01:10,580 --> 00:01:14,690
+We store the data for a motivating example in a data frame.
+
+22
+00:01:14,690 --> 00:01:18,920
+You can access this data set by loading the dslabs library,
+
+23
+00:01:18,920 --> 00:01:22,220
+and then after that, loading the murders data set.
+
+24
+00:01:22,220 --> 00:01:25,520
+We do that using the function data.
+
+25
+00:01:25,520 --> 00:01:30,230
+To see that this is, in fact, the data frame, we type class(murders),
+
+26
+00:01:30,230 --> 00:01:33,500
+and we see that R tells us that in fact, it is a data frame.
+
+27
+00:01:33,500 --> 00:01:38,310
+This is where the relevant data for answering our questions is stored.
+
+28
+00:01:38,310 --> 00:01:41,780
+So we know our data is stored in the object murders.
+
+29
+00:01:41,780 --> 00:01:43,010
+But what is this object?
+
+30
+00:01:43,010 --> 00:01:46,150
+How can we find out more about this object?
+
+31
+00:01:46,150 --> 00:01:50,870
+The function "str" is useful for this. str stands for structure,
+
+32
+00:01:50,870 --> 00:01:53,090
+and it shows us the structure of an object.
+
+33
+00:01:53,090 --> 00:01:57,920
+If we type str(murders), it shows us that, for example, it's a data frame.
+
+34
+00:01:57,920 --> 00:02:02,990
+It has 51 observations, 51 rows, and five variables.
+
+35
+00:02:02,990 --> 00:02:07,010
+On the left, we can see the variable names, state, abb,
+
+36
+00:02:07,010 --> 00:02:10,510
+which is abbreviation, region, population, and total.
+
+37
+00:02:10,510 --> 00:02:11,510
+So this all makes sense.
+
+38
+00:02:11,510 --> 00:02:15,890
+We can see that this is going to all be useful for answering our questions.
+
+39
+00:02:15,890 --> 00:02:20,510
+We can also show the first six lines of this data frame using the function
+
+40
+00:02:20,510 --> 00:02:21,290
+"head".
+
+41
+00:02:21,290 --> 00:02:25,700
+We type head(murders), we see Alabama, Alaska, Arizona, Arkansas,
+
+42
+00:02:25,700 --> 00:02:32,570
+California, and Colorado, along with the variables associated with each state.
+
+43
+00:02:32,570 --> 00:02:35,630
+This object follows the convention that we describe.
+
+44
+00:02:35,630 --> 00:02:37,650
+It's quite common in data science.
+
+45
+00:02:37,650 --> 00:02:41,360
+Rows are the different observation, in this case, states.
+
+46
+00:02:41,360 --> 00:02:43,820
+And columns represent different variables.
+
+47
+00:02:43,820 --> 00:02:48,110
+In this case, state, abbreviation, region, population, and total.
+
+48
+00:02:48,110 --> 00:02:52,680
+OK, now we want to start accessing data from this object.
+
+49
+00:02:52,680 --> 00:02:56,180
+So before we go any further in answering our original question
+
+50
+00:02:56,180 --> 00:03:00,200
+about different states, let's get to know the components
+
+51
+00:03:00,200 --> 00:03:01,880
+of this object a little better.
+
+52
+00:03:01,880 --> 00:03:06,140
+For our analysis, we will need to access the different variables represented
+
+53
+00:03:06,140 --> 00:03:07,370
+by columns.
+
+54
+00:03:07,370 --> 00:03:11,600
+To access these variables, we use the dollar sign symbol.
+
+55
+00:03:11,600 --> 00:03:13,490
+It's called the accessor.
+
+56
+00:03:13,490 --> 00:03:14,460
+Here's an example.
+
+57
+00:03:14,460 --> 00:03:18,500
+If I type murders, and then dollar sign, population,
+
+58
+00:03:18,500 --> 00:03:23,070
+it shows us the column associated with the population size.
+
+59
+00:03:23,070 --> 00:03:27,110
+But how did we know how to use the character population?
+
+60
+00:03:27,110 --> 00:03:32,400
+Above, when we used str to reveal the structure of the object,
+
+61
+00:03:32,400 --> 00:03:35,240
+we saw the names of the columns.
+
+62
+00:03:35,240 --> 00:03:38,690
+We can also get the names of the columns using the names function.
+
+63
+00:03:38,690 --> 00:03:43,740
+Names(murders) tells us the five names of the five columns.
+
+64
+00:03:43,740 --> 00:03:47,300
+So we can see that population is one of those names.
+
+65
+00:03:47,300 --> 00:03:50,510
+So we can use the accessor combined with those names
+
+66
+00:03:50,510 --> 00:03:54,080
+to access any of the columns in the data frame.
+
+67
+00:03:54,080 --> 00:03:57,860
+It is important to know, for the rest of the analysis we're going to do,
+
+68
+00:03:57,860 --> 00:04:02,870
+that the order of the entries in the murders dollar sign population
+
+69
+00:04:02,870 --> 00:04:08,220
+list that we get, it preserves the order of the rows in our data table.
+
+70
+00:04:08,220 --> 00:04:12,260
+As you will see, this will later permit us to manipulate one variable
+
+71
+00:04:12,260 --> 00:04:14,370
+based on the results of another.
+
+72
+00:04:14,370 --> 00:04:17,060
+For example, we might want to manipulate the state
+
+73
+00:04:17,060 --> 00:04:19,910
+names by the number of murders.
+
+74
+00:04:19,910 --> 00:04:24,170
+Note that the object, murders dollar sign population, is not one number.
+
+75
+00:04:24,170 --> 00:04:26,150
+It's 51.
+
+76
+00:04:26,150 --> 00:04:29,690
+We call these types of objects vectors.
+
+77
+00:04:29,690 --> 00:04:32,210
+A single number is technically a vector.
+
+78
+00:04:32,210 --> 00:04:34,910
+But in general, they have several entries.
+
+79
+00:04:34,910 --> 00:04:37,730
+The function length tells you how many.
+
+80
+00:04:37,730 --> 00:04:41,780
+So if I define a new object called pop for population,
+
+81
+00:04:41,780 --> 00:04:48,350
+as the column in the murders data set that has the population sizes,
+
+82
+00:04:48,350 --> 00:04:51,290
+and then I type length pop, I will see that it's
+
+83
+00:04:51,290 --> 00:04:55,430
+a vector with 51 entries, one for each state.
+
+84
+00:04:55,430 --> 00:04:59,780
+This particular vector is a numeric vector since population sizes,
+
+85
+00:04:59,780 --> 00:05:01,160
+are numbers.
+
+86
+00:05:01,160 --> 00:05:03,800
+Now let's talk about character vectors.
+
+87
+00:05:03,800 --> 00:05:07,570
+We can store characters in R as well.
+
+88
+00:05:07,570 --> 00:05:11,140
+Because variables also use character strings,
+
+89
+00:05:11,140 --> 00:05:16,150
+we're going to use quotes to distinguish between variable names and character
+
+90
+00:05:16,150 --> 00:05:16,910
+strings.
+
+91
+00:05:16,910 --> 00:05:24,100
+So if I type a and assign 1 to a, the variable a is 1, so if I type a in R,
+
+92
+00:05:24,100 --> 00:05:25,130
+I get back a 1.
+
+93
+00:05:25,130 --> 00:05:30,270
+However, if I want to now work with the character string a,
+
+94
+00:05:30,270 --> 00:05:31,850
+I need to use quotes.
+
+95
+00:05:31,850 --> 00:05:37,720
+So if I write quotes a, then I get back the character string a.
+
+96
+00:05:37,720 --> 00:05:43,580
+An example of a character vector is the column with the state names.
+
+97
+00:05:43,580 --> 00:05:47,500
+So if I grab that column by using the dollar sign
+
+98
+00:05:47,500 --> 00:05:52,570
+and I look at the class of that column, you will see that it's a character.
+
+99
+00:05:52,570 --> 00:05:56,020
+As with numeric vectors, all entries in a character vector
+
+100
+00:05:56,020 --> 00:05:57,460
+need to be a character.
+
+101
+00:05:57,460 --> 00:06:00,010
+Logical vectors are another type of vector.
+
+102
+00:06:00,010 --> 00:06:02,740
+We don't have those in this particular data frame,
+
+103
+00:06:02,740 --> 00:06:05,260
+but we need to mention them.
+
+104
+00:06:05,260 --> 00:06:08,210
+These must be either true or false.
+
+105
+00:06:08,210 --> 00:06:14,140
+So we can create a logical vector by, for example, assigning 3 equal equal
+
+106
+00:06:14,140 --> 00:06:16,750
+to 2 to the object z.
+
+107
+00:06:16,750 --> 00:06:18,670
+When I type z, we see that it's false.
+
+108
+00:06:18,670 --> 00:06:21,190
+That's because 3 is not equal to 2.
+
+109
+00:06:21,190 --> 00:06:25,090
+And if we type class of z, it returns a logical.
+
+110
+00:06:25,090 --> 00:06:30,940
+This is because equal equal is a relational operator asking
+
+111
+00:06:30,940 --> 00:06:32,680
+if 3 is equal to 2.
+
+112
+00:06:32,680 --> 00:06:37,540
+Note that it's different from just one equal, which would assign 2 to 3,
+
+113
+00:06:37,540 --> 00:06:39,970
+which would, of course, give us an error.
+
+114
+00:06:39,970 --> 00:06:42,340
+There's one more data type we want to cover.
+
+115
+00:06:42,340 --> 00:06:44,200
+It's factors.
+
+116
+00:06:44,200 --> 00:06:48,290
+In the murders data set, we have a column called regions.
+
+117
+00:06:48,290 --> 00:06:52,694
+These are the regions of the US, so which state is in which region.
+
+118
+00:06:52,694 --> 00:06:54,610
+We would think that this would be a character,
+
+119
+00:06:54,610 --> 00:06:58,390
+because the regions are things like Northeast and South, et cetera.
+
+120
+00:06:58,390 --> 00:07:02,500
+But when we look at the class of the regions column, we see something new,
+
+121
+00:07:02,500 --> 00:07:04,790
+it says factor.
+
+122
+00:07:04,790 --> 00:07:11,020
+So let's learn about factors, as they appear often in R and in data science.
+
+123
+00:07:11,020 --> 00:07:16,120
+Factors are useful for storing what is called categorical data.
+
+124
+00:07:16,120 --> 00:07:17,730
+The regions are categorical.
+
+125
+00:07:17,730 --> 00:07:19,420
+There is only four categories.
+
+126
+00:07:19,420 --> 00:07:22,720
+Each state is in one of these four.
+
+127
+00:07:22,720 --> 00:07:27,760
+We can see the four levels in this particular factor using the function
+
+128
+00:07:27,760 --> 00:07:28,710
+levels.
+
+129
+00:07:28,710 --> 00:07:32,260
+So we type levels, murders, dollar sign, region,
+
+130
+00:07:32,260 --> 00:07:36,890
+and we see Northeast, South, North Central, and West.
+
+131
+00:07:36,890 --> 00:07:38,800
+So why do we do this?
+
+132
+00:07:38,800 --> 00:07:44,320
+Turns out that saving categorical data this way is more memory efficient.
+
+133
+00:07:44,320 --> 00:07:48,610
+So in R, in the background, we store integers.
+
+134
+00:07:48,610 --> 00:07:51,010
+We store the levels as integers.
+
+135
+00:07:51,010 --> 00:07:55,700
+Technically, integers are smaller memory-wise than characters.
+
+136
+00:07:55,700 --> 00:07:58,580
+So this is what makes it more efficient.
+
+137
+00:07:58,580 --> 00:08:02,350
+However, factors are also a source of confusion,
+
+138
+00:08:02,350 --> 00:08:04,540
+as they can easily be confused with characters.
+
+139
+00:08:04,540 --> 00:08:09,340
+If we just look at this variable, they would appear to be characters.
+
+140
+00:08:09,340 --> 00:08:13,930
+It's only when we ask using class what type it
+
+141
+00:08:13,930 --> 00:08:16,200
+is that we see they are factors.
+
+142
+00:08:16,200 --> 00:08:20,320
+We will learn more about factors in later videos.
+
+143
+00:08:20,320 --> 00:08:23,740
+In general, we recommend avoiding factors as much as possible.
+
+144
+00:08:23,740 --> 00:08:27,160
+Although, as we will learn later, they are sometimes
+
+145
+00:08:27,160 --> 00:08:32,610
+necessary to fit statistical models that depend on categorical data.
+
+146
+00:08:32,610 --> 00:08:38,912
+
+
