@@ -68,3 +68,12 @@ Use the table function in one line of code to create a table showing the number 
 # Write one line of code to show the number of states per region
 table(murders[["region"]])
 
+a <- 2
+b <- -1
+c <- -4
+
+solution1 <- (-1 *b + sqrt(b^2 - (4*a*c))/2*a
+solution2 <- (-1 *b - sqrt(b^2 - (4*a*c))/2*a
+
+                    
+              
