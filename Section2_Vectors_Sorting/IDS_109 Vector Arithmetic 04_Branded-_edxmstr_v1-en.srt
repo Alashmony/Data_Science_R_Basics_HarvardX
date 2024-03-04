@@ -1,0 +1,216 @@
+0
+00:00:00,000 --> 00:00:02,994
+
+
+1
+00:00:02,994 --> 00:00:08,483
+[MUSIC PLAYING]
+
+2
+00:00:08,483 --> 00:00:11,360
+RAFAEL IRIZZARY: In an earlier video, we saw that California
+
+3
+00:00:11,360 --> 00:00:13,820
+had the most murders of any state.
+
+4
+00:00:13,820 --> 00:00:16,870
+But does this mean it is the most dangerous state?
+
+5
+00:00:16,870 --> 00:00:20,660
+What if it just has many, many more people than any other one?
+
+6
+00:00:20,660 --> 00:00:23,060
+Using the tools we have learned, we can very quickly
+
+7
+00:00:23,060 --> 00:00:27,410
+confirm that indeed, California has the largest population.
+
+8
+00:00:27,410 --> 00:00:33,500
+We simply type murders$state and then ask which is the biggest state,
+
+9
+00:00:33,500 --> 00:00:35,360
+population-wise, using code.
+
+10
+00:00:35,360 --> 00:00:37,590
+And we see that it's California.
+
+11
+00:00:37,590 --> 00:00:39,350
+In fact, we can see how many people it has
+
+12
+00:00:39,350 --> 00:00:43,850
+by just looking at the maximum of the populations column.
+
+13
+00:00:43,850 --> 00:00:46,700
+With over 37 million inhabitants, it might
+
+14
+00:00:46,700 --> 00:00:50,540
+be unfair to compare California to other states.
+
+15
+00:00:50,540 --> 00:00:53,920
+What we really should be computing is the murders per capita.
+
+16
+00:00:53,920 --> 00:00:59,120
+Here, the powerful vector arithmetic capabilities of R come in handy.
+
+17
+00:00:59,120 --> 00:01:03,800
+In R, arithmetic operations on vectors occur element-wise.
+
+18
+00:01:03,800 --> 00:01:05,630
+What does this mean?
+
+19
+00:01:05,630 --> 00:01:08,690
+For a quick example, suppose we have height in inches.
+
+20
+00:01:08,690 --> 00:01:13,400
+We're going to add some heights to a heights object.
+
+21
+00:01:13,400 --> 00:01:16,250
+Suppose you want to convert them to centimeters.
+
+22
+00:01:16,250 --> 00:01:22,250
+Note what happens when we multiply the object heights by the value 2.54.
+
+23
+00:01:22,250 --> 00:01:26,510
+We get back each element multiplied by 2.54.
+
+24
+00:01:26,510 --> 00:01:29,060
+They've been converted to centimeters.
+
+25
+00:01:29,060 --> 00:01:31,760
+Similarly if for each of these measurements,
+
+26
+00:01:31,760 --> 00:01:35,960
+we want to compute how many inches taller or shorter than the average,
+
+27
+00:01:35,960 --> 00:01:39,290
+we can subtract the average from every entry.
+
+28
+00:01:39,290 --> 00:01:41,450
+Let's say the average is 69 inches.
+
+29
+00:01:41,450 --> 00:01:42,920
+Then we write the following code.
+
+30
+00:01:42,920 --> 00:01:47,750
+Heights minus 69 will give us for each entry how much bigger or smaller
+
+31
+00:01:47,750 --> 00:01:50,240
+they are from 69.
+
+32
+00:01:50,240 --> 00:01:53,540
+If we have two vectors of the same length,
+
+33
+00:01:53,540 --> 00:01:56,370
+these operations are even more powerful.
+
+34
+00:01:56,370 --> 00:02:01,460
+For example, if we have two vectors like this, they get added entry by entry.
+
+35
+00:02:01,460 --> 00:02:04,580
+And the same holds for other mathematical operations
+
+36
+00:02:04,580 --> 00:02:07,790
+such as multiplication, subtraction and division.
+
+37
+00:02:07,790 --> 00:02:13,880
+This implies that to compute the murder rate, murders for every 100,000 people,
+
+38
+00:02:13,880 --> 00:02:17,900
+we can simply type murder rate-- that's the object we're defining--
+
+39
+00:02:17,900 --> 00:02:23,630
+is the total divided by the population, multiplied by 100,000.
+
+40
+00:02:23,630 --> 00:02:25,910
+So the total for each state is going to be
+
+41
+00:02:25,910 --> 00:02:30,500
+divided by the population for each state, element-wise, one by one.
+
+42
+00:02:30,500 --> 00:02:34,460
+And then at the end, we multiply those values by 100,000
+
+43
+00:02:34,460 --> 00:02:36,530
+to get it in the right units.
+
+44
+00:02:36,530 --> 00:02:39,260
+Once we do this, we notice that California
+
+45
+00:02:39,260 --> 00:02:41,900
+is no longer near the top of the list.
+
+46
+00:02:41,900 --> 00:02:45,470
+We can use what we've learned to order the states by murder rate.
+
+47
+00:02:45,470 --> 00:02:50,420
+Here I'm going to look at the states ordered by murder rate, in this case,
+
+48
+00:02:50,420 --> 00:02:52,610
+in decreasing order.
+
+49
+00:02:52,610 --> 00:02:56,480
+And now we see that California is not even in the top 10.
+
+50
+00:02:56,480 --> 00:02:59,750
+The highest murder rate is in the District of Columbia,
+
+51
+00:02:59,750 --> 00:03:02,090
+the second one is in Louisiana, et cetera.
+
+52
+00:03:02,090 --> 00:03:05,290
+And California is only the 14th.
+
+53
+00:03:05,290 --> 00:03:12,704
+
+

@@ -1,0 +1,240 @@
+0
+00:00:00,000 --> 00:00:02,898
+
+
+1
+00:00:02,898 --> 00:00:09,190
+[MUSIC PLAYING]
+
+2
+00:00:09,190 --> 00:00:12,370
+RAFAEL IRIZARRY: In general, coercion is an attempt by R
+
+3
+00:00:12,370 --> 00:00:14,860
+to be flexible with data types.
+
+4
+00:00:14,860 --> 00:00:17,980
+When an entry does not match the expected,
+
+5
+00:00:17,980 --> 00:00:22,540
+R tries to guess what we meant before throwing in an error.
+
+6
+00:00:22,540 --> 00:00:25,000
+But this can also lead to confusion.
+
+7
+00:00:25,000 --> 00:00:28,690
+Failing to understand coercion can drive programmers crazy
+
+8
+00:00:28,690 --> 00:00:32,590
+when attempting to code in R, since it behaves quite differently from most
+
+9
+00:00:32,590 --> 00:00:34,150
+other languages.
+
+10
+00:00:34,150 --> 00:00:38,110
+Let's learn about it with some simple examples.
+
+11
+00:00:38,110 --> 00:00:42,140
+We earlier said that vectors must be all of the same type.
+
+12
+00:00:42,140 --> 00:00:46,730
+So if we try to combine say numbers and characters, you might expect an error.
+
+13
+00:00:46,730 --> 00:00:53,330
+But if we type x and assign 1, canada, 3, we don't get an error.
+
+14
+00:00:53,330 --> 00:00:55,450
+We don't even get a warning.
+
+15
+00:00:55,450 --> 00:00:57,080
+So what's happened?
+
+16
+00:00:57,080 --> 00:00:59,570
+Let's look at what x is when we type that.
+
+17
+00:00:59,570 --> 00:01:05,319
+It says quotes 1, quotes canada, quotes 3, has converted the 1 and the 3
+
+18
+00:01:05,319 --> 00:01:07,390
+to character strings.
+
+19
+00:01:07,390 --> 00:01:10,450
+And the class of x is character.
+
+20
+00:01:10,450 --> 00:01:13,870
+Even though one and 3 were originally numbers when we wrote it out,
+
+21
+00:01:13,870 --> 00:01:15,880
+it has converted them to character.
+
+22
+00:01:15,880 --> 00:01:20,620
+We say that R coerced the data into a character string.
+
+23
+00:01:20,620 --> 00:01:25,180
+It guessed that because we put a character string there in the middle,
+
+24
+00:01:25,180 --> 00:01:29,860
+we meant the 1 and the 3 to actually also be character strings.
+
+25
+00:01:29,860 --> 00:01:33,730
+R also offers functions to force a specific coercion.
+
+26
+00:01:33,730 --> 00:01:38,680
+For example, you can turn numbers into characters with the as.character
+
+27
+00:01:38,680 --> 00:01:39,650
+function.
+
+28
+00:01:39,650 --> 00:01:40,940
+Here's an example.
+
+29
+00:01:40,940 --> 00:01:44,440
+We create a variable x, numbers 1 through 5,
+
+30
+00:01:44,440 --> 00:01:48,080
+and we convert them to characters using the as.character function.
+
+31
+00:01:48,080 --> 00:01:51,040
+Now you can see that y is a list - a vector
+
+32
+00:01:51,040 --> 00:01:53,980
+of character strings from 1 to 5.
+
+33
+00:01:53,980 --> 00:01:57,970
+We can turn them back using the as.numeric function, which
+
+34
+00:01:57,970 --> 00:02:03,280
+converts characters or other data types into numeric variables.
+
+35
+00:02:03,280 --> 00:02:06,010
+This function is actually quite useful in practice,
+
+36
+00:02:06,010 --> 00:02:10,389
+because many datasets, many public datasets that include numbers,
+
+37
+00:02:10,389 --> 00:02:16,210
+include them in a form that makes them appear to be character strings.
+
+38
+00:02:16,210 --> 00:02:19,060
+Missing data is very common in practice.
+
+39
+00:02:19,060 --> 00:02:22,020
+In R, we have a special value for missing data.
+
+40
+00:02:22,020 --> 00:02:23,830
+It's the NA.
+
+41
+00:02:23,830 --> 00:02:26,560
+We can get NAs from coercion.
+
+42
+00:02:26,560 --> 00:02:29,050
+For example, when R fails to coerce something,
+
+43
+00:02:29,050 --> 00:02:32,680
+it tries to coerce but it can't, we will get NA.
+
+44
+00:02:32,680 --> 00:02:33,980
+Here's an example.
+
+45
+00:02:33,980 --> 00:02:39,250
+Suppose we define a object of character strings 1, b, 3,
+
+46
+00:02:39,250 --> 00:02:41,680
+and we want to convert them to numbers, R
+
+47
+00:02:41,680 --> 00:02:46,180
+will be able to convert the 1 and the 3 to the numeric values 1, 3.
+
+48
+00:02:46,180 --> 00:02:48,280
+But it won't know what to do with b.
+
+49
+00:02:48,280 --> 00:02:51,760
+So if you call as.numeric on this vector, we get a warning.
+
+50
+00:02:51,760 --> 00:02:55,390
+It says NAs introduced by coercion.
+
+51
+00:02:55,390 --> 00:03:00,670
+And the answer is the number one, a missing value, and then the number 3.
+
+52
+00:03:00,670 --> 00:03:03,580
+R does not have any guesses of what to do.
+
+53
+00:03:03,580 --> 00:03:08,650
+So instead of converting b to a number, it tells us it's an NA.
+
+54
+00:03:08,650 --> 00:03:13,120
+Note that, as a data scientist, you will encounter the NA often,
+
+55
+00:03:13,120 --> 00:03:14,875
+as they are used as missing data.
+
+56
+00:03:14,875 --> 00:03:20,110
+And as I said, this is a very common problem in real life data sets.
+
+57
+00:03:20,110 --> 00:03:22,750
+So be sure to know what NA means.
+
+58
+00:03:22,750 --> 00:03:25,530
+And be ready to see a lot of them.
+
+59
+00:03:25,530 --> 00:03:31,542
+
+

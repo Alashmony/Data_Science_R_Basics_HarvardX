@@ -1,0 +1,86 @@
+Section 2 introduces you to vectors and functions such as sorting.
+
+In Section 2.1, you will: 
+
+    Create numeric and character vectors. 
+    Name the columns of a vector. 
+    Generate numeric sequences. 
+    Access specific elements or parts of a vector.
+    Coerce data into different data types as needed. 
+
+In Section 2.2, you will: 
+
+Sort vectors in ascending and descending order. 
+    Extract the indices of the sorted elements from the original vector. 
+    Find the maximum and minimum elements, as well as their indices, in a vector. 
+    Rank the elements of a vector in increasing order. 
+
+In Section 2.3, you will: 
+
+    Perform arithmetic between a vector and a single number.
+    Perform arithmetic between two vectors of the same length. 
+
+There are three DataCamp assessments (one after each of the three sections), and one final assessment for you to practice your coding skills.
+
+We encourage you to use R to interactively test out your answers and further your learning.
+
+Vectors:
+    - A vector is a (list) which is the most basic unit ti store data. Each column in a DataFrame is a vector.
+    - Creating a vector is easy, just use the c() function which stands for concatenate
+    - You can give elements a name, c(egy= 0020, us = 001)
+    - You can give the name later using different vector with names() function
+    - We can create a vector of a sequence using the seq() function, the third argument is the step size
+    - We can create a sequence also with a colon ":", for example ```1:10```
+    - Subsitting with the same method as python []
+    - To subsit multiple elements, use a new vector with c(), for example, to get 2nd and 5th elements of the array m, use ```m[c(2,5)]```
+    - we can subsit with a sequence
+    - We can access with the name ```codes[c("Egypt", "Canada")]```
+
+Vector Coercion:
+    - As vectors should have the same data type, R tries to guess the data type.
+    - If elements with different types was given, it might change their types before throwing an error
+    - R allows some data type conversion if can be done with as.charachter() and as.numeric()
+    - If the element cannot be converted, R will use NA instead
+    - The seq() function has another useful argument. The argument length.out. This argument lets us generate sequences that are increasing by the same amount but are of the prespecified length.
+        ```x <- seq(0, 100, length.out = 5)```
+        >>> 0, 25, 50, 75, 100
+    - Integers:
+        We have discussed the numeric class. We just saw that the seq function can generate objects of this class. For another example, type
+        ```class(seq(1, 10, 0.5))```
+        into the console and note that the class is numeric. R has another type of vector we have not described, the integer class. You can create an integer by adding the letter L after a whole number. If you type
+        ```class(3L)```
+        in the console, you see this is an integer and not a numeric. For most practical purposes, integers and numerics are indistinguishable. For example 3, the integer, minus 3 the numeric is 0. To see this type this in the console
+        ```3L - 3```
+        The main difference is that integers occupy less space in the computer memory, so for big computations using integers can have a substantial impact.
+
+Sorting:
+    - We can use the sort() function to sort the vector
+    - The order() function returns a vector with the order of each element to sort the original vector
+        ```x <- c(1,5,3)
+            order(x)```
+        >>> 1, 3, 2
+    - You can use the resulting vector from order() to sort the original vector
+        ```x <- c(1,5,3)
+            index <- order(x)
+            x[index]```
+        >>> 1, 2, 3
+    - We can sort a column (vector) x by a different column (vector) y, get the index, which is the order(y), and apply to x[index]
+    - max() gets the maximum value, while which.max() gets the order of it
+    - Same with min() and which.min()
+    - rank(x) returns the rank of each element in its order
+    - is.na() returns a vector of booleans with true if the element is an NA
+    - The "!" gets the elements not matching (means NOT)
+
+Vector Arithmetic:
+    - Arithmetic operations is allowed with a number or a vector with the same length()
+        ```
+        x <- c(1,2,3)
+        x*2
+        ```
+        >>> 2, 4, 6
+        ```
+        y <- c(2,3,4)
+        x*y
+        ```
+        >>> 2, 6, 12
+    
