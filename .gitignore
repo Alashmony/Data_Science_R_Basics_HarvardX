@@ -49,3 +49,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+#Video Folders
+*/Videos
+Videos/*
+*.mp4
