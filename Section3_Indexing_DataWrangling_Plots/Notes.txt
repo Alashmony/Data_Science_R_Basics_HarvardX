@@ -1,0 +1,71 @@
+Section 3 Overview
+    Section 3 introduces the R commands and techniques that help you wrangle, analyze, and visualize data.
+
+In Section 3.1, you will:
+    Subset a vector based on properties of another vector. 
+    Use multiple logical operators to index vectors.
+    Extract the indices of vector elements satisfying one or more logical conditions. 
+    Extract the indices of vector elements matching with another vector.
+    Determine which elements in one vector are present in another vector. 
+
+In Section 3.2, you will:
+    Wrangle data tables using functions in the dplyr package. 
+    Modify a data table by adding or changing columns. 
+    Subset rows in a data table.
+    Subset columns in a data table. 
+    Perform a series of operations using the pipe operator. 
+    Create data frames. 
+
+In Section 3.3, you will:
+    Plot data in scatter plots, box plots, and histograms. 
+
+In Section 3.4, you will:
+    Use summarize() to facilitate summarizing data in dplyr.
+    Learn about the dot placeholder.
+    Learn how to group and then summarize in dplyr.
+    Learn how to sort data tables in dplyr.
+
+In Section 3.5, you will:
+    Learn how to subset and summarize data using data.table.
+    Learn how to sort data frames using data.table.
+
+logical operators:
+    - We can use logicals to index vectors which returns an array with similar length with "true" in the field where the condition was met.
+    - Using the function sum() on a logical vector returns the number of entries that are "true".
+    - The logical operator “&” makes two logicals true only when they are both true.
+    - logical operators are: less than <, less or eq <=, more than >, more or eq =>, equal ==, not eq !=, not !, or |, and &
+
+Indexing Functions:
+    - The function which() gives us the entries of a logical vector that are true.
+    ```
+        index <- which(murders$state == "Massachusetts")
+        index
+        murder_rate[index]
+    ```
+    >>> 1.802
+
+    - The function match() looks for entries in a vector and returns the index needed to access them.
+    ```
+        index <- match(c("New York", "Florida", "Texas"), murders$state)
+        index
+    ```
+    >>> 33, 10, 44
+    ```
+        murders$state[index]
+        murder_rate[index]
+    ```
+    >>> "New York", "Florida", "Texas"
+    >>> 2.668, 3.398, 3.201
+
+    - We use the function %in% if we want to know whether or not each element of a first vector is in a second vector.
+    ```
+        x <- c("a", "b", "c", "d", "e")
+        y <- c("a", "d", "f")
+        y %in% x
+    ```
+    >>> TRUE, TRUE, FALSE
+    ```
+        # to see if Boston, Dakota, and Washington are states
+        c("Boston", "Dakota", "Washington") %in% murders$state
+    ```
+    >>> FALSE, FALSE, TRUE

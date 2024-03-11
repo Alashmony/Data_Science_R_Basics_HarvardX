@@ -1,0 +1,244 @@
+0
+00:00:00,000 --> 00:00:02,982
+
+
+1
+00:00:02,982 --> 00:00:08,449
+[MUSIC PLAYING]
+
+2
+00:00:08,449 --> 00:00:13,390
+RAFAEL IRIZARRY: R provides a powerful and convenient way of indexing vectors.
+
+3
+00:00:13,390 --> 00:00:18,520
+We can, for example, subset a vector based on properties of another vector.
+
+4
+00:00:18,520 --> 00:00:21,940
+We continue our US murders example to demonstrate
+
+5
+00:00:21,940 --> 00:00:27,840
+this powerful approach using the murder rates we have already calculated.
+
+6
+00:00:27,840 --> 00:00:30,960
+All right, let's suppose you're moving from Italy where
+
+7
+00:00:30,960 --> 00:00:34,410
+according to the ABC News report we showed earlier, the murder
+
+8
+00:00:34,410 --> 00:00:39,000
+rate is only 0.71 per 100,000 people.
+
+9
+00:00:39,000 --> 00:00:42,920
+You would prefer to move to a state with a similar murder rate or lower.
+
+10
+00:00:42,920 --> 00:00:46,610
+To find these states, we're going to use a powerful feature of R,
+
+11
+00:00:46,610 --> 00:00:50,670
+and it's that we can use logicals to index vectors.
+
+12
+00:00:50,670 --> 00:00:54,260
+Furthermore, the principles of vector arithmetics that we've already
+
+13
+00:00:54,260 --> 00:00:57,750
+learned apply to logical operations.
+
+14
+00:00:57,750 --> 00:01:01,760
+For example, if we compare a vector to a single number,
+
+15
+00:01:01,760 --> 00:01:05,129
+it actually performs the test for each entry.
+
+16
+00:01:05,129 --> 00:01:08,420
+Here's an example related to the question above.
+
+17
+00:01:08,420 --> 00:01:14,480
+We're going to define index as the murder rate smaller than 0.71,
+
+18
+00:01:14,480 --> 00:01:20,870
+or, if we want to know if it's less or equal, we can use less than or equal.
+
+19
+00:01:20,870 --> 00:01:23,420
+Here's a result of this operation.
+
+20
+00:01:23,420 --> 00:01:27,920
+We can see the 51 entries are either false or true.
+
+21
+00:01:27,920 --> 00:01:31,130
+The entries that are true are the cases for which the murder
+
+22
+00:01:31,130 --> 00:01:35,940
+rate is smaller or equal than 0.71.
+
+23
+00:01:35,940 --> 00:01:39,210
+To see which states these are, we can leverage the fact
+
+24
+00:01:39,210 --> 00:01:41,450
+that vectors can be indexed with logicals.
+
+25
+00:01:41,450 --> 00:01:47,790
+So if we type murders$state and then index with the index object,
+
+26
+00:01:47,790 --> 00:01:49,140
+we get the answer.
+
+27
+00:01:49,140 --> 00:01:54,481
+It's Hawaii, Iowa, New Hampshire, North Dakota, and Vermont.
+
+28
+00:01:54,481 --> 00:01:59,060
+Another nice feature is that to count how many entries are true,
+
+29
+00:01:59,060 --> 00:02:03,390
+the function sum returns the sum of these entries.
+
+30
+00:02:03,390 --> 00:02:07,690
+This is because the logical vector gets coerced to numeric.
+
+31
+00:02:07,690 --> 00:02:10,039
+True turns into a 1.
+
+32
+00:02:10,039 --> 00:02:12,290
+False gets turned into a 0.
+
+33
+00:02:12,290 --> 00:02:16,410
+So when we sum them, we're basically counting the cases that are true.
+
+34
+00:02:16,410 --> 00:02:17,160
+Here's an example.
+
+35
+00:02:17,160 --> 00:02:19,760
+If we say sum(index), we get 5.
+
+36
+00:02:19,760 --> 00:02:25,160
+That's how many states have murder rates smaller than 0.71.
+
+37
+00:02:25,160 --> 00:02:27,470
+All right, now suppose we like the mountains,
+
+38
+00:02:27,470 --> 00:02:31,560
+and we want to move to a safe state in the west region of the country.
+
+39
+00:02:31,560 --> 00:02:34,190
+That's where the mountains are in the US.
+
+40
+00:02:34,190 --> 00:02:37,520
+We want the murder rate to be at most, 1.
+
+41
+00:02:37,520 --> 00:02:40,850
+So we want two different things to be true now.
+
+42
+00:02:40,850 --> 00:02:45,260
+Here, we can use the logical operators in R. And one of them
+
+43
+00:02:45,260 --> 00:02:50,120
+is the "&" sign, which makes two logicals true
+
+44
+00:02:50,120 --> 00:02:51,360
+only when they're both true.
+
+45
+00:02:51,360 --> 00:02:54,890
+So true and true is true, but true and false is false.
+
+46
+00:02:54,890 --> 00:02:57,290
+And false and false, of course, is false.
+
+47
+00:02:57,290 --> 00:03:01,820
+Knowing this, we can use the "&" to get a vector of logicals
+
+48
+00:03:01,820 --> 00:03:07,080
+and find out which states satisfy our two conditions.
+
+49
+00:03:07,080 --> 00:03:11,300
+Let's start by creating the two logical vectors representing our conditions.
+
+50
+00:03:11,300 --> 00:03:13,610
+We want the region to be west.
+
+51
+00:03:13,610 --> 00:03:17,570
+And we want the murder rate to be less than or equal to 1.
+
+52
+00:03:17,570 --> 00:03:20,480
+We can use the "&" to get a vector of logicals
+
+53
+00:03:20,480 --> 00:03:24,260
+and find out which states satisfy our two conditions.
+
+54
+00:03:24,260 --> 00:03:27,980
+We define index now as safe & west.
+
+55
+00:03:27,980 --> 00:03:32,750
+And that will only be true when both entries of those vectors are true.
+
+56
+00:03:32,750 --> 00:03:36,410
+Now we can see which states are both safe according to our definition,
+
+57
+00:03:36,410 --> 00:03:37,940
+and in the west.
+
+58
+00:03:37,940 --> 00:03:42,480
+The five states are Hawaii, Idaho, Oregon, Utah, and Wyoming.
+
+59
+00:03:42,480 --> 00:03:47,320
+So now we have five states to pick for where we're going to move from Italy.
+
+60
+00:03:47,320 --> 00:03:53,600
+
+
