@@ -1,3 +1,7 @@
+library(dslabs)
+
+data(murders)
+
 # defining murder rate as before
 murder_rate <- murders$total / murders$population * 100000
 # creating a logical vector that specifies if the murder rate in that state is less than or equal to 0.71
