@@ -69,3 +69,32 @@ Indexing Functions:
         c("Boston", "Dakota", "Washington") %in% murders$state
     ```
     >>> FALSE, FALSE, TRUE
+
+Basic Data Wrangling:
+    - To change a data table by adding a new column, or changing an existing one, we use the mutate() function.
+    - To filter the data by subsetting rows, we use the function filter().
+    - To subset the data by selecting specific columns, we use the select() function.
+    - We can perform a series of operations by sending the results of one function to another function using the pipe operator, %>%.
+
+Working with data manilpuation package (dplyr)
+    - mutate() adds new columns, syntax -> mutate(dataset, new_var = calculation)
+    - filter() filters the data with a condition as follows -> filter(dataset, condition)
+    - select() select certain columns from the dataset -> select(dataset, column1, column2, column2)
+    - %>% passes the result of a function to the next one, you won't need to add the argument which is the dataset anymore
+
+Creating dataframes
+    - Creating a data frame can be done as follows -> data.frame(column1 = c("v1", "v2"), column2 = c(1,2))
+    - By default, data.frame() creates the string variables as factors, to disable it, set ```stringsAsFactors = FALSE```  in the arguments
+    ```
+    data.frame(column1 = c("v1", "v2"), column2 = c(1,2),  stringsAsFactors = FALSE)
+    ```
+    - nrow() counts the number of rows in a dataset
+
+Key Points
+    - We can create a simple scatterplot using the function plot().
+    - Histograms are graphical summaries that give you a general overview of the types of values you have.  In R, they can be produced using the hist() function.
+    - Boxplots provide a more compact summary of a distribution than a histogram and are more useful for comparing distributions. They can be produced using the boxplot() function.
+    - Boxplot() is used as follows boxplot(numericColumn~Categorical, data = dataset)
+
+Key Points
+    - The quantile() function can be used to return the min, median, and max in a single line of code.

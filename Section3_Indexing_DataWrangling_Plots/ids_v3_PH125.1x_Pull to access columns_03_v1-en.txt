@@ -1,0 +1,14 @@
+RAFAEL IRIZARRY: Previously, we defined the data table US murder rate
+using this code.
+Note that this is just one number yet we are starting in a data frame.
+You can see it by using the class function.
+Since as most dplyr functions summarize always returns a data frame.
+This might be problematic if you want to use the result with functions
+that require numeric value.
+To get numeric values or vectors, we can use the access or the dollar
+sign or the dplyr pull function.
+Here's an example of how we could use the pull function.
+If we want to save the number directly with just one line of code,
+we can do the whole operation like this.
+We now see that the US murder rate object is now a numeric.
+We can use the class function like this.

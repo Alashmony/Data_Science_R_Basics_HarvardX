@@ -1,0 +1,48 @@
+RAFAEL IRIZARRY: An important part of data analysis is summarizing data.
+Examples of summary statistics are the median, mean, and standard deviation.
+We learn more about these in the data visualization course.
+We will also learn that better understanding of the data
+can be achieved by splitting it into groups, then providing summaries
+for each.
+In this section, we cover two new dplyr verbs
+that make these computations easier--
+group_by and summarize.
+We learn to access resulting values in the table.
+And finally we also learn how to arrange which
+helps us examine data after sorting.
+We're going to start by loading the tidyverse libraries.
+Let's start by discussing the summarize function.
+The summarize function in dplyr provides a way
+to compute summary statistics with intuitive and readable code.
+Let's start with a simple example based on the murders data
+set we've been looking at.
+We start by loading the library, loading the data,
+and we're actually going to create a column with the murder rates,
+like this.
+We want to compute the minimum, median, and maximum murder rates
+for states in the Western region.
+So we're first going to stratify, look at a group,
+and then compute the summary statistics.
+We can do it using this code.
+This takes our original data table as input,
+filters to keep only states in the West, and then
+produces a new, summarized table with the minimum, median, and maximum rates.
+We get to pick the names of the columns of the resulting table.
+For example, in the code we just saw, we decided
+to use minimum, median, and maximum, but we could
+have used other names just the same.
+Because the resulting table, stored in s, is a data frame,
+we can access the components with the accessor, the dollar sign.
+In this case, this will be a numeric, as you see here.
+As with most other dplyr functions, summarize
+is aware of the variable names and we can use them directly.
+So when inside the call to summarize we write median rate,
+it is accessing the column with that name
+and then computing the median of the respective numeric vector.
+Note that we can compute any other summary.
+For example, suppose we want to compute the murder rate for the entire country.
+Note that taking the average rate, like this,
+does not give the right answer because some states are
+much more populous than others and they need to be weighed more.
+Instead, we can compute the rate using this code,
+using the summarize function.

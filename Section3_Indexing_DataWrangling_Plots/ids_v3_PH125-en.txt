@@ -1,0 +1,15 @@
+RAFAEL IRIZARRY: We previously computed three summary statistics
+using three different functions.
+But, notice that we can obtain the min, median, and maximum with just one line
+of code using the quantiles function.
+For example, we can type quantiles x, c, 0, 0.5, and 1, and this returns
+the minimum, the median, and the maximum of the vector x.
+However, if we attempt to use a function that
+returns two or more values, like this, we
+see that summarize returns a table with three rows--
+one for each outcome of the call of the function quantile.
+If you want to have them in columns, as we did previously,
+we need to write a function that returns a data frame rather than a vector.
+We can do that by using the function command, like this.
+We refine my quantile as a function, and then we
+call the summarize function, like this.
