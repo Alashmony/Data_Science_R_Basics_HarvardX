@@ -97,4 +97,97 @@ Key Points
     - Boxplot() is used as follows boxplot(numericColumn~Categorical, data = dataset)
 
 Key Points
-    - The quantile() function can be used to return the min, median, and max in a single line of code.
+    - The summarize() function from dplyr provides an easy way to compute summary statistics
+        ```
+        s <- murders %>% 
+        filter(region == "West") %>%
+        summarize(minimum = min(rate), 
+                    median = median(rate), 
+                    maximum = max(rate))
+        s
+        ```
+    - The quantile() function can be used to return the min, median, and max in a single line of code as follows:
+        ```
+        s <- murders %>% 
+        filter(region == "West") %>%
+        summarize(range = quantile(rate, c(0, 0.5, 1)))
+        s
+        ```
+    - To access those values returned from summarize, we should use the accessor "$", for example:
+        ```
+        s$minimum
+        ``` 
+    - The quantile() will return data in one column with a row for each function, if we need to change it into columns, we should use a special function that we will implement manually
+        ```
+        # returning minimum, median, and maximum as a data frame
+        my_quantile <- function(x){
+        r <-  quantile(x, c(0, 0.5, 1))
+        data.frame(minimum = r[1], median = r[2], maximum = r[3]) 
+        }
+        murders %>% 
+        filter(region == "West") %>%
+        summarize(my_quantile(rate))
+        ```
+    - summarize() as most dplyr functions, returns a data.frame object. We can access values either with "$" accessor or with pull() function
+    - The dot "." is a place holder for the data in the pipe (%>%), to access the data at any time, use the dot "."
+        ```
+        # using the dot to access the rate
+        us_murder_rate <- murders %>% 
+        summarize(rate = sum(total) / sum(population) * 10^5) %>%
+        .$rate
+        us_murder_rate
+        class(us_murder_rate) 
+        ```
+    - The group_by() function groups the data in categories in a way that makes summarize() work on each group differently, just like a pivot table
+
+    - The arrange() from dplyr is used for data.frame objects givin the columns as an input separated with commas "," .The the sort() and order() are used for vectors.
+    - The desc() funciton can be nested within the arrange to sort in a descending oreder
+        ```
+        murders %>% arrange(region, population) %>% head()
+        ```
+    - We can get first rows with the head() and the top_n() functions, top_n() required the number of rows it should recieve, and the column to get the top elements of
+    - To ignore the NAs, we can use the na.rm argument:
+        ```
+        mean(na_example, na.rm = TRUE)
+        sd(na_example, na.rm = TRUE)
+        ```
+3.5 Introduction to data.table
+Key Points
+    - In this course, we often use tidyverse packages to illustrate because these packages tend to have code that is very readable for beginners.
+    - There are other approaches to wrangling and analyzing data in R that are faster and better at handling large objects, such as the data.table package.
+    - convert the data frame into a data.table object
+        ```
+        murders_table <- setDT(murders)
+        ```
+    - Selecting in data.table uses notation similar to that used with matrices, the .() tells R that those between () are column names.
+        ```
+        murders_table[, c("state", "region")] |> head()
+        murders_table[, .(state, region)] |> head()
+        ```
+    - To add a column in data.table, you can use the := function.
+        ```
+        murders[, rate := total / population * 100000]
+        head(murders_table)
+        murders[, ":="(rate = total / population * 100000, rank = rank(population))]
+        head(murders_table)
+        ```
+    - Because the data.table package is designed to avoid wasting memory, when you make a copy of a table, it does not create a new object. 
+    - The := function changes by reference. If you want to make an actual copy, you need to use the copy() function.
+    - Side note: the R language has a new, built-in pipe operator as of version 4.1: |>. This works similarly to the pipe %>% you are already familiar with. You can read more about the |> pipe here {https://www.r-bloggers.com/2021/05/the-new-r-pipe/}.
+
+    - Subsetting in data.table uses notation similar to that used with matrices.
+
+    - In data.table we can call functions inside .() and they will be applied to rows.
+    - The group_by followed by summarize in dplyr is performed in one line in data.table using the by argument.
+
+    - To order rows in a data frame using data.table, we can use the same approach we used for filtering.
+    - The default sort is an ascending order, but we can also sort tables in descending order.
+    - We can also perform nested sorting by including multiple variables in the desired sort order.
+
+    - A tbl (pronounced "tibble") is a special kind of data frame.
+    - Tibbles are the default data frame in the tidyverse.
+    - Tibbles display better than regular data frames.
+    - Subsets of tibbles are tibbles, which is useful because tidyverse functions require data frames as inputs.
+    - Tibbles will warn you if you try to access a column that doesn't exist.
+    - Entries in tibbles can be complex - they can be lists or functions.
+    - The function group_by() returns a grouped tibble, which is a special kind of tibble.
