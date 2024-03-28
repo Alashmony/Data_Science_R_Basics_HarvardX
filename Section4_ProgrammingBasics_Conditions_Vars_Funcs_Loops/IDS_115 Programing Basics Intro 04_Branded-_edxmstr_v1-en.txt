@@ -1,0 +1,16 @@
+
+RAFAEL IRIZARRY: We teach R because it greatly
+facilitates data analysis, the main topic of this series.
+Coding in R, we can efficiently perform exploratory data analysis,
+build data analysis pipelines, and prepare data visualizations
+to communicate results.
+However, R is not just a data analysis environment, but a programming
+language.
+Advanced R programmers can develop complex packages,
+and even suggest ways to improve R itself.
+But we do not cover advanced programming in this course.
+However, in the next videos, we introduce three key programming
+concepts--
+conditional expressions, for-loops, and building functions.
+These are not just key building blocks for advanced programming,
+but often come in handy during data analysis.

@@ -1,0 +1,81 @@
+Section 4 Overview
+    Section 4 introduces you to general programming features like 'if-else' and 'for loop' commands so that you can write your own functions to perform various operations on datasets.
+
+In Section 4.1, you will:
+    Understand some of the programming capabilities of R. 
+
+In Section 4.2, you will:
+    Use basic conditional expressions to perform different operations. 
+    Check if any or all elements of a logical vector are TRUE. 
+    
+In Section 4.3, you will:
+    Define and call functions to perform various operations.
+    Pass arguments to functions, and return variables/objects from functions.
+
+In Section 4.4, you will:
+    Use for-loops to perform repeated operations. 
+    Articulate in-built functions of R that you could try for yourself. 
+    There is one DataCamp assessment and one final assessment for you to practice your coding skills.
+
+We encourage you to use R to interactively test out your answers and further your learning.
+
+Key Points:
+    - R is also a programming language with loops, conditions, and functions.
+    - Advanced R programmers can also make libraries with R
+
+Key Points
+    - The most common conditional expression in programming is an if-else statement, which has the form "if [condition], perform [expression], else perform [alternative expression]".
+    - The ifelse() function works similarly to an if-else statement, but it is particularly useful since it works on vectors by examining each element of the vector and returning a corresponding answer accordingly.
+    - The any() function takes a vector of logicals and returns true if any of the entries are true.
+    - The all() function takes a vector of logicals and returns true if all of the entries are true.
+
+    - Just Like C, the if statement is written as follows:
+        ```
+        if (some condition)
+        {
+            some_code_block()
+        }
+        else
+        {
+            another_code_block()
+        }
+        ```
+    - Another way is to use ifelse() function which takes 3 args, ifelse(condition, expression if true, expression if false)
+    - The ifelse() is useful to apply the condition on a column / variable 
+    - The ifelse is also useful in replacing the NA values, for example: ```y <- ifelse(is.na(x), 0, x)``` to replace NA values from the vector x with zeros
+    - any() retrns TRUE if at least one items within the array is TRUE
+    - all() returns TRUE if all elements within the array are TRUE, will return FALSE if of them are FALSE
+
+Key points
+    - The R function called function() tells R you are about to define a new function.
+    - Functions are objects, so must be assigned a variable name with the arrow operator.
+    - The general way to define functions is: (1) decide the function name, which will be an object, (2) type function() with your function's arguments in parentheses, (3) write all the operations inside brackets.
+    - Variables defined inside a function are not saved in the workspace.
+
+    - Functions are written with a function called function(), the imput arguments will be the input arguments for the new function
+        ```
+        my_func <- function(x,y, bool = TRUE)
+        {
+            block_code(x)
+            m <- operation(x, y)
+            ifelse(bool, m, function(y)) # the returned value is the latest line
+        }
+        ```
+Key points
+    - For-loops perform the same task over and over while changing the variable.  They let us define the range that our variable takes, and then changes the value with each loop and evaluates the expression every time inside the loop.
+    - The general form of a for-loop is: "For i in [some range], do operations".  This i changes across the range of values and the operations assume i is a value you're interested in computing on.
+    - At the end of the loop, the value of i is the last value of the range.
+
+    - The c-like for loops has the following form:
+        ```
+        for(tmp_var in range a:b)
+        {
+            do_this_code()
+        }
+        ``` 
+    - The lines() is like the plot() but for line chart instead of the scatter plot
+
+Other Functions:
+    - Functions used instead of loops are: apply(), sapply(), tapply(), and mapply()
+    - other functions like split(), cut(), quantile(), reduce(), identical(), and unique() are also useful to learn
+

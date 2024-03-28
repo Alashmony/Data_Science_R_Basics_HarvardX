@@ -1,0 +1,74 @@
+
+[MUSIC PLAYING]
+
+RAFAEL IRIZZARY: In this video, we're going to learn about for loops.
+We're going to use an example from math.
+There's a formula that tells you what the sum of 1 plus 2 plus 3 plus
+dot dot dot, plus n is.
+The formula is n times n plus 1 divided by 2.
+But what if we weren't sure that that was the right formula?
+How could we check? We're going to use R to check.
+Using what we learned about functions, we can easily
+create one that computes the sum.
+I'm going to call it s_n.
+The function is compute_s_n.
+I'm defining it.
+It takes a value n, it creates a vector 1 through n, and returns a sum.
+This is the sum that we're interested in.
+So we can now compute the sum for any n.
+So if I apply to 3, I get back 6, 1 plus 2 plus 3.
+If I use 100, I get back 5,050, 1 plus 2 plus 3 all the way up to 100.
+I can do it on any number.
+If I compute it on 2017, I get a very large number that's over two million.
+Now, let's say we want to compute this sum for various values of n.
+Say we want to compute it for 1, for 2 up to 25.
+So now we're computing 25 sums.
+Do we write 25 lines of code, one from each n?
+No.
+That's what loops are for.
+Note that we are performing exactly the same task over and over again,
+except we're changing n.
+For-loops let us define the range that our variable takes.
+In our example, it would go from 1 to 25.
+Then change the value as you loop and evaluate the expression every time
+inside your loop.
+The general form looks like this.
+For i in some range, and then the operations
+that assume i is a value that you're interested in computing on.
+This i is going to be changing across the range of values.
+Perhaps the simplest example of a for loop is this useless piece of code.
+We write for(i in 1:5), print(i).
+So I see the numbers 1, 2, 3 up to 5.
+That's what this very simple for loop does.
+Note that we like to use i in for loops.
+But it can be any variable.
+We can use n, we can use a, anything we want.
+Also note that at the end of the loop, the value of i
+is the last value of the range.
+So if I type i after that for loop, I get back 5.
+And here is the for loop we would write for our sums example.
+We want to compute the sum for the values 1, 2, 3 up to 25.
+So the first thing I'm going to do is I'm
+going to create a vector, an empty vector where I'm going
+to store the results as I compute them.
+This is s_n.
+Now I'm going to write a for loop.
+The index is n, and I'm going to go from 1 through m, which is 25.
+So inside the loop, I'm calling the function compute_s_n()
+with a value n.
+n is the value that's changing from 1 through 25.
+And as I evaluate that, I assign it to the vector in the nth entry.
+So we have defined the sum for values ranging from 1 through 25.
+We can check to see if we did this right by, for example, making a plot.
+So here I'm plotting n versus s_n.
+From the plot, we notice that it appears to be a quadratic.
+So we're on the right track with our formula.
+To check specifically if we're getting the right answer,
+we can simply print out the results from our loop,
+and the results from using the formula.
+And we see that we get the same answers.
+We can also overlay the two results using the function lines.
+We first plot the points using plot, and then
+we add lines, using the function lines, that
+show us the predicted values from the formula,
+and we see that they're right on the dot.
